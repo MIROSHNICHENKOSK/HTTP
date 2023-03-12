@@ -12,10 +12,11 @@ class YaUploader:
 		headers = {'Authorization': token}
 
 		resp = requests.get(f'{url}/upload?path=%2FTest%2F&overwrite={False}', headers=headers).json()
+		print(resp)
 		requests.put(resp['href'], files={'file':path_to_file})
 
 if __name__ == '__main__':
-	path_to_file = "E:\pruch\python\!Sofick\Test.txt"
+	path_to_file = "C:\python_work\test.jpg"
 	token = ''
     
 	uploader = YaUploader(token)
